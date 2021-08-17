@@ -10,7 +10,7 @@ public class Servlet extends HttpServlet {
     public void service(HttpServletRequest request,HttpServletResponse response)
             throws ServletException,IOException{
 
-        response.setContentType("text/html;charset=utf-8");
+        response.setContentType("text/html;charset=GBK");
         PrintWriter out = response.getWriter();
         int id = Integer.parseInt(request.getParameter("id"));
 
@@ -20,10 +20,10 @@ public class Servlet extends HttpServlet {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/student_system",
+                    "jdbc:mysql://localhost:3306/student_system?",
                     "root","123456");
             prep = conn.prepareStatement(
-                    "select * from students where id=?");
+                    "select id from students where id=?");
             prep.setInt(1, id);
             rst = prep.executeQuery();
             if(rst.next()){
