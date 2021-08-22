@@ -1,6 +1,7 @@
 package com.example.findid.Mapper;
 
 import com.example.findid.user.User;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 @Repository
