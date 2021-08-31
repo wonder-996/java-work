@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="signin" action="index.html" method="post" th:action="@{/login}">
+    <!--/*@thymesVar id="msg" type="templates"*/-->
+    <label style="color: aquamarine" th:text="${msg}"></label><br>
+    <input type="text" name="UserName" placeholder="User ID"><br>
+    <input type="password" name="Password" placeholder="Password"><br>
+    <button type="submit" name="submit">submit</button>
+</form>
+</body>
+</html>
